@@ -178,6 +178,12 @@ select:focus {
   gap: 16px;
 }
 
+@media (max-width: 600px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .summary-item {
   padding: 20px;
   border-radius: var(--radius);
@@ -250,6 +256,6 @@ select:focus {
 }
 
 #filterType {
-  width: 150px;
+  width: 110px;
   padding: 10px 10px;
 }
