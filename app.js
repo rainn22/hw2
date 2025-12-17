@@ -13,6 +13,27 @@ const totalIncome = document.getElementById("totalIncome");
 const totalExpense = document.getElementById("totalExpense");
 const transactionsListEl = document.getElementById("transactions");
 
+function switchTab(targetTab) {
+  document
+    .querySelectorAll(".tab")
+    .forEach((t) => t.classList.remove("active"));
+  document
+    .querySelectorAll(".tab-content")
+    .forEach((c) => c.classList.add("hidden"));
+
+  targetTab.classList.add("active");
+  const contentId = `${targetTab.dataset.tab}Tab`;
+  document.getElementById(contentId).classList.remove("hidden");
+
+  if (targetTab.dataset.tab === "charts") {
+    updateCategoryChart();
+  }
+}
+
+document.querySelectorAll(".tab").forEach((tab) => {
+  tab.addEventListener("click", () => switchTab(tab));
+});
+
 function formatCurrency(amount) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
