@@ -44,7 +44,7 @@
 
 ## How to run
 
-You can run the app locally in two simple ways:
+You can run the app locally:
 
 ### Open the app directly
    
